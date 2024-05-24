@@ -1,0 +1,19 @@
+{
+    "pin": "1234", // Pin for authentication. You can also include letters since it's a string.
+    "port": 3000, // Port the server will run on.
+    "computers": {
+        "my-pc": {
+            "name": "PC", // Name of the computer. Used in logs.
+            "mac": "", // Format: XX:XX:XX:XX:XX:XX
+            "ip": "", // IP Address of the computer
+            "port": 9 // 9 is supported by most network cards, if it doesnt work try 7 or 0.
+        },
+
+        "pc-2": { // You can have multiple computers. This key is just an example. Feel free to delete it.
+            "name": "Second PC",
+            "mac": "",
+            "ip": "",
+            "port": 9
+        }
+    }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "wol-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "slashedCodes",
+  "license": "MIT",
+  "dependencies": {
+    "json5": "^2.2.3",
+    "wol": "^1.0.7"
+  }
+}
