@@ -131,3 +131,4 @@ dist
 
 # config file (sensitive info)
 config.json5
+package-lock.json
