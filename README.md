@@ -2,6 +2,8 @@
 Basic Wake-On-Lan server with basic authentication.
 
 # Installation
+For Raspberry Pi's or other linux devices, follow [RPI.md](RPI.md)
+
 ```
 git clone https://github.com/slashedCodes/wol-server.git
 cd wol-server
