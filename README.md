@@ -8,7 +8,7 @@ For Raspberry Pi's or other linux devices, follow [RPI.md](RPI.md)
 git clone https://github.com/slashedCodes/wol-server.git
 cd wol-server
 npm i # Install dependencies
-npm i -g nodemon # Install nodemon
+sudo npm i -g nodemon # Install nodemon
 
 # Rename config.json5.example to config.json5
 mv config.json5.example config.json5

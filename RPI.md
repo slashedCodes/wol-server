@@ -85,7 +85,7 @@ cd wol-server
 Once you're done cloning the repository, install the dependencies:
 ```
 npm i # Install dependencies
-npm i -g nodemon # Install nodemon
+sudo npm i -g nodemon # Install nodemon
 ```
 
 Now we need to rename the config file and edit it to fit your needs:
