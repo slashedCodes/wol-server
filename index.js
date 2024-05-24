@@ -6,6 +6,7 @@ import JSON5 from "json5";
 import * as fs from "fs";
 import * as http from "http";
 import * as url from "url";
+import * as os from "os";
 
 // Variables //
 
@@ -90,6 +91,20 @@ async function getBody(req) {
     });
 }
 
+function getIP() {
+    let interfaces = os.networkInterfaces();
+    for (let devName in interfaces) {
+        let iface = interfaces[devName];
+
+        for (let i = 0; i < iface.length; i++) {
+            let alias = iface[i];
+            if (alias.family === 'IPv4' && alias.address !== '127.0.0.1' && !alias.internal)
+                return alias.address;
+        }
+    }
+    return '0.0.0.0';
+}
+
 const server = http.createServer(async (req, res) => {
     const urlPath = url.parse(req.url).pathname;
 
@@ -121,4 +136,8 @@ const server = http.createServer(async (req, res) => {
     }
 });
 
-server.listen(config["port"], () => log(`Server started running on port ${config["port"]}!`));
+server.listen(config["port"], () => { 
+    log(`Server started running on port ${config["port"]}!`);
+    log(`You can access it at http://${getIP()}:${config["port"]}`);
+    log(`Or at http://127.0.0.1:${config["port"]} or at http://localhost:${config["port"]}`)
+});
