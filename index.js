@@ -113,6 +113,7 @@ const server = http.createServer(async (req, res) => {
         if(data["pin"] != config["pin"]) {
             res.statusCode = 403; // 403 Forbidden
             res.end("Invalid Pin.");
+            return;
         }
 
         res.statusCode = await wakeID(data["id"]);
